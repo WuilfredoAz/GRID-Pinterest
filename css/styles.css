@@ -1,0 +1,306 @@
+@font-face {
+    font-family: 'fontello';
+    src: url('../fonts/fontello.eot?88212541');
+    src: url('../fonts/fontello.eot?88212541#iefix') format('embedded-opentype'),
+         url('../fonts/fontello.woff2?88212541') format('woff2'),
+         url('../fonts/fontello.woff?88212541') format('woff'),
+         url('../fonts/fontello.ttf?88212541') format('truetype'),
+         url('../fonts/fontello.svg?88212541#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+  /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+  /*
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+      font-family: 'fontello';
+      src: url('../font/fontello.svg?88212541#fontello') format('svg');
+    }
+  }
+  */
+
+   [class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+
+    /* you can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+  }
+
+  .icon-chat:before { content: '\e800'; }
+  .icon-help:before { content: '\e801'; }
+  .icon-plus:before { content: '\e802'; }
+  .icon-bell-alt:before { content: '\f0f3'; }
+  .icon-ellipsis:before { content: '\f141'; }
+  .icon-link-ext-alt:before { content: '\f14c'; }
+  .icon-share:before { content: '\f1e0'; }
+
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+    font-weight: 900;
+}
+
+.header
+{
+    height: 65px;
+    display: grid;
+    grid-template-columns: 1fr 368px 180px;
+    padding: 0 10px;
+    border-bottom: 1px solid #efefef;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: #fff;
+    z-index: 1;
+}
+
+.logo
+{
+    fill: #e60023;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.logo:hover,
+.menu a:hover
+{
+    background: #f2f2f2;
+}
+
+.col-1,
+.col-2,
+.menu,
+.col-3
+{
+    display: flex;
+    height: inherit;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.col-1 a
+{
+    text-decoration: none;
+}
+
+.col-1 input[type=text]
+{
+    width: 90%;
+    height: 30px;
+    padding: 7px;
+    font-family: "Roboto";
+    font-weight: 700;
+    font-size: 1em;
+    border-radius: 10px;
+    background: #efefef;
+    color: #333;
+    border: none;
+    outline: none;
+}
+
+.col-1 input[type=text]:focus,
+.menu a:focus,
+.col-1 a:focus .logo
+{
+    box-shadow: 0 0 0 4px rgba(0, 132, 255, .5);
+}
+
+.menu
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.menu li
+{
+    list-style: none;
+}
+
+.menu a
+{
+    color: #8e8e8e;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 20px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu a img
+{
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+.border
+{
+    border-right: 2px solid #efefef;
+    padding-right: 20px;
+}
+
+.menu .selected
+{
+    color: #211922;
+}
+
+.col-3
+{
+    font-size: 20px;
+}
+
+main
+{
+    margin-top: 85px;
+}
+
+.contenedor
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240px);
+    gap: 10px;
+    justify-content: center;
+    grid-auto-flow: dense;
+}
+
+.postImage
+{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.postImage img
+{
+    vertical-align: top;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.post
+{
+    /* background: #f2f2f2; */
+    border-radius: 15px;
+    /* padding: 10px; */
+    cursor: zoom-in;
+    overflow: hidden;
+    position: relative;
+}
+
+.level-1
+{
+    grid-row-end: span 1;
+}
+
+.level-2
+{
+    grid-row-end: span 2;
+}
+
+.level-3
+{
+    grid-row-end: span 3;
+}
+
+.overlay
+{
+    position: absolute;
+    background: rgba(0,0,0,.2);
+    display: none;
+    top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+}
+
+.post:hover .overlay
+{
+    display: block;
+}
+
+.post .overlay a
+{
+    text-decoration: none;
+    position: absolute;
+}
+
+.btnSave
+{
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    padding: 10px;
+    background: #e60023;
+    border-radius: 0 12px 12px 0;
+}
+
+.btnPage
+{
+    bottom: 10px;
+    left: 10px;
+    background: #f2f2f2;
+    color: #585858;
+    font-weight: 400;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.btnShare,
+.btnMore
+{
+    color: #585858;
+    background: #f2f2f2;
+    padding: 7px 5px;
+    border-radius: 50%;
+}
+
+.btnShare
+{
+    bottom: 10px;
+    right: 10px;
+}
+
+.btnMore
+{
+    bottom: 10px;
+    right: 50px;
+}
